@@ -1,2 +1,2 @@
-# RacketMate
+# racketmate
 Solo Project (MERN)
