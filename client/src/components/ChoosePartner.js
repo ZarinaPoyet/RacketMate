@@ -1,26 +1,10 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// const ChoosePartner = () => {
-//     return (
-//         <div>
-//             <h2>Choose your RacketMate</h2>
-//             {/* TODO: Partner selection list */}
-//             <Link to="/profile/partner-details">View Partner Details</Link>
-//         </div>
-//     );
-// };
-
-// export default ChoosePartner;
-
-// components/ChoosePartner.js
-
-
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getProfiles } from '../services/profiles';
 
 const ChoosePartner = () => {
     const [partners, setPartners] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchProfiles = async () => {
@@ -31,11 +15,15 @@ const ChoosePartner = () => {
         fetchProfiles();
     }, []);
 
+    const handlePartnerClick = (partnerId) => {
+        navigate(`/choose-partner/partner-details/${partnerId}`);
+    }
+
     return (
         <div>
             <h1>Choose a Partner</h1>
-            {partners.map(partner => (
-                <div key={partner.id}>
+            {partners.map((partner) => (
+                <div key={partner.id} onClick={() => handlePartnerClick(partner.id)}>
                     <h2>{partner.name} {partner.surname}</h2>
                     <p>Gender: {partner.gender}</p>
                     <p>Skill Level: {partner.skill_level}</p>
