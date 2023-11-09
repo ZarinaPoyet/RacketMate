@@ -7,12 +7,12 @@ const TennisClub = () => {
 
     const handleNext = () => {
         // TODO: Logic to handle club selection
-        navigate('/profile/choose-partner');
+        navigate('/dashboard/choose-partner');
     };
 
     return (
         <div>
-            <Link to="/profile/skill-level">⬅️</Link>
+            <Link to="/dashboard/skill-level">⬅️</Link>
             <h2>Tennis Club</h2>
             <input type="text" value={club} onChange={(e) => setClub(e.target.value)} />
             <button onClick={handleNext}>Next</button>

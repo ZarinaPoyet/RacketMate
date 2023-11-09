@@ -5,10 +5,11 @@ const PartnerType = () => {
     return (
         <div>
             <Link to="/dashboard">⬅️</Link>
+            <p>step 1 of 3</p>
             <h2>Player Type</h2>
-            <Link to="/profile/skill-level"><button>Male</button></Link>
-            <Link to="/profile/skill-level"><button>Female</button></Link>
-            <Link to="/profile/skill-level"><button>Other</button></Link>
+            <Link to="/dashboard/skill-level"><button>Male</button></Link>
+            <Link to="/dashboard/skill-level"><button>Female</button></Link>
+            <Link to="/dashboard/skill-level"><button>Other</button></Link>
         </div>
     )
 }

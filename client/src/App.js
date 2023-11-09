@@ -19,11 +19,11 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/edit" element={<EditProfile />} />
-        <Route path="/profile/partner-type" element={<PartnerType />} />
-        <Route path="/profile/skill-level" element={<SkillLevel />} />
-        <Route path="/profile/tennis-club" element={<TennisClub />} />
-        <Route path="/profile/choose-partner" element={<ChoosePartner />} />
-        <Route path="/profile/partner-details" element={<PartnerDetails />} />
+        <Route path="/dashboard/partner-type" element={<PartnerType />} />
+        <Route path="/dashboard/skill-level" element={<SkillLevel />} />
+        <Route path="/dashboard/tennis-club" element={<TennisClub />} />
+        <Route path="/dashboard/choose-partner" element={<ChoosePartner />} />
+        <Route path="/choose-partner/partner-details/:id" element={<PartnerDetails />} />
       </Routes>
     </Router>
   );
