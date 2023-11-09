@@ -31,3 +31,19 @@ export async function postProfile(profile) {
         console.log(error);
     }
 }
+
+export async function getProfile(id) {
+    try {
+        console.log('ID ==> ', id)
+        const response = await fetch(`${url}/profiles/${id}`);
+        console.log(response)
+        if (!response.ok) {
+            throw new Error('Profile not found');
+        }
+        const profile = await response.json();
+        return profile;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}

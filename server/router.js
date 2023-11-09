@@ -6,5 +6,7 @@ const router = express.Router();
 router.get('/profiles', controller.getProfiles);
 router.post('/profiles', controller.postProfile);
 
+router.get('/profiles/:id', controller.getProfile);
+
 
 module.exports = router;

@@ -22,14 +22,17 @@ const ChoosePartner = () => {
     return (
         <div>
             <h1>Choose a Partner</h1>
-            {partners.map((partner) => (
-                <div key={partner.id} onClick={() => handlePartnerClick(partner.id)}>
-                    <h2>{partner.name} {partner.surname}</h2>
-                    <p>Gender: {partner.gender}</p>
-                    <p>Skill Level: {partner.skill_level}</p>
-                    <p>Club: {partner.club}</p>
-                </div>
-            ))}
+            {partners.map((partner) => {
+                console.log(partner)
+                return (
+                    <div key={partner._id} onClick={() => handlePartnerClick(partner._id)}>
+                        <h2>{partner.name} {partner.surname}</h2>
+                        <p>Gender: {partner.gender}</p>
+                        <p>Skill Level: {partner.skill_level}</p>
+                        <p>Club: {partner.club}</p>
+                    </div>
+                )
+            })}
         </div>
     );
 };
