@@ -8,5 +8,8 @@ router.post('/profiles', controller.postProfile);
 
 router.get('/profiles/:id', controller.getProfile);
 
+router.get('/clubs', controller.getClubs);
+router.post('/clubs', controller.postClub);
+
 
 module.exports = router;

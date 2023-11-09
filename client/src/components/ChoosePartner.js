@@ -21,9 +21,9 @@ const ChoosePartner = () => {
 
     return (
         <div>
-            <h1>Choose a Partner</h1>
+            <h1>Choose your RacketMate</h1>
             {partners.map((partner) => {
-                console.log(partner)
+                // console.log(partner)
                 return (
                     <div key={partner._id} onClick={() => handlePartnerClick(partner._id)}>
                         <h2>{partner.name} {partner.surname}</h2>

@@ -5,8 +5,8 @@ export async function getProfiles() {
         const data = await fetch(`${url}/profiles`);
         const response = await data.json();
         return response;
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
     }
 }
 
@@ -34,9 +34,9 @@ export async function postProfile(profile) {
 
 export async function getProfile(id) {
     try {
-        console.log('ID ==> ', id)
+        // console.log('ID ==> ', id)
         const response = await fetch(`${url}/profiles/${id}`);
-        console.log(response)
+        // console.log(response)
         if (!response.ok) {
             throw new Error('Profile not found');
         }
@@ -47,3 +47,4 @@ export async function getProfile(id) {
         throw error;
     }
 }
+

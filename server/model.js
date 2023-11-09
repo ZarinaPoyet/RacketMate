@@ -12,11 +12,11 @@ const profileSchema = new mongoose.Schema({
     club: String
 });
 
-// const clubSchema = new mongoose.Schema({
-//     name: String
-// })
+const clubSchema = new mongoose.Schema({
+    name: String
+})
 
 const Profile = mongoose.model('Profile', profileSchema);
-// const Club = mongoose.model('Club', clubSchema)
+const Club = mongoose.model('Club', clubSchema)
 
-module.exports = Profile;
+module.exports = { Profile, Club }
