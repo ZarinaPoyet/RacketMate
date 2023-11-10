@@ -16,9 +16,9 @@ const PartnerType = () => {
             <Link to="/dashboard">⬅️</Link>
             <p>step 1 of 3</p>
             <h2>Player Type</h2>
-            <button onClick={() => selectGender('Male')}>Male</button>
-            <button onClick={() => selectGender('Female')}>Female</button>
-            <button onClick={() => selectGender('Other')}>Other</button>
+            <button onClick={() => selectGender('male')}>Male</button>
+            <button onClick={() => selectGender('female')}>Female</button>
+            <button onClick={() => selectGender('other')}>Other</button>
         </div>
     )
 }

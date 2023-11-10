@@ -1,15 +1,5 @@
 const url = 'http://localhost:3070';
 
-// export async function getProfiles() {
-//     try {
-//         const data = await fetch(`${url}/profiles`);
-//         const response = await data.json();
-//         return response;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
 export async function getProfiles(filters) {
     try {
         const queryParams = new URLSearchParams({

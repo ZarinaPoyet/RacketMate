@@ -1,15 +1,5 @@
 const { Profile, Club } = require('./model');
 
-// async function getProfiles(req, res) {
-//     try {
-//         const profiles = await Profile.find();
-//         res.json(profiles);
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).json({ error: 'Internal server error' });
-//     }
-// }
-
 async function getProfiles(req, res) {
     try {
         console.log(req.query, req.params)

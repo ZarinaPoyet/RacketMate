@@ -16,9 +16,9 @@ const SkillLevel = () => {
             <Link to="/dashboard/partner-type">⬅️</Link>
             <p>step 2 of 3</p>
             <h2>Skill Level</h2>
-            <button onClick={() => selectSkillLevel('Beginner')}>Beginner</button>
-            <button onClick={() => selectSkillLevel('Intermediate')}>Intermediate</button>
-            <button onClick={() => selectSkillLevel('Professional')}>Professional</button>
+            <button onClick={() => selectSkillLevel('beginner')}>Beginner</button>
+            <button onClick={() => selectSkillLevel('intermediate')}>Intermediate</button>
+            <button onClick={() => selectSkillLevel('professional')}>Professional</button>
         </div>
     )
 }
