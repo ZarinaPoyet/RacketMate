@@ -1,15 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useFilters } from '../context/FiltersContext';
 
 const PartnerType = () => {
+    const { setFilters } = useFilters();
+    const navigate = useNavigate();
+
+    const selectGender = (gender) => {
+        setFilters(filters => ({ ...filters, gender: gender }));
+        navigate('/dashboard/skill-level');
+    }
+
     return (
         <div>
             <Link to="/dashboard">⬅️</Link>
             <p>step 1 of 3</p>
             <h2>Player Type</h2>
-            <Link to="/dashboard/skill-level"><button>Male</button></Link>
-            <Link to="/dashboard/skill-level"><button>Female</button></Link>
-            <Link to="/dashboard/skill-level"><button>Other</button></Link>
+            <button onClick={() => selectGender('Male')}>Male</button>
+            <button onClick={() => selectGender('Female')}>Female</button>
+            <button onClick={() => selectGender('Other')}>Other</button>
         </div>
     )
 }

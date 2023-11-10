@@ -6,9 +6,9 @@ export const useFilters = () => useContext(FiltersContext);
 
 export const FiltersProvider = ({ children }) => {
     const [filters, setFilters] = useState({
-        selectedGender: null,
-        selectedSkillLevel: null,
-        selectedClub: null
+        gender: '',
+        skill_level: '',
+        club: ''
     });
 
     return (

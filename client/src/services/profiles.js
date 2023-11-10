@@ -1,10 +1,29 @@
 const url = 'http://localhost:3070';
 
-export async function getProfiles() {
+// export async function getProfiles() {
+//     try {
+//         const data = await fetch(`${url}/profiles`);
+//         const response = await data.json();
+//         return response;
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+export async function getProfiles(filters) {
     try {
-        const data = await fetch(`${url}/profiles`);
-        const response = await data.json();
-        return response;
+        const queryParams = new URLSearchParams({
+            gender: filters.gender,
+            skill_level: filters.skill_level,
+            club: filters.club,
+        }).toString();
+        console.log("query params: ", queryParams)
+        console.log(`${url}/profiles?${queryParams}`)
+        const response = await fetch(`${url}/profiles?${queryParams}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return await response.json();
     } catch (error) {
         console.log(error);
     }

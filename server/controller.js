@@ -1,8 +1,31 @@
 const { Profile, Club } = require('./model');
 
+// async function getProfiles(req, res) {
+//     try {
+//         const profiles = await Profile.find();
+//         res.json(profiles);
+//     } catch (error) {
+//         console.log(error);
+//         res.status(500).json({ error: 'Internal server error' });
+//     }
+// }
+
 async function getProfiles(req, res) {
     try {
-        const profiles = await Profile.find();
+        console.log(req.query, req.params)
+        const query = {};
+        if (req.query.gender) {
+            query.gender = req.query.gender.toLowerCase();
+        }
+        if (req.query.skill_level) {
+            query.skill_level = req.query.skill_level.toLowerCase();
+        }
+        if (req.query.club) {
+            query.club = req.query.club;
+        }
+
+        console.log('server query:', query);
+        const profiles = await Profile.find(query);
         res.json(profiles);
     } catch (error) {
         console.log(error);

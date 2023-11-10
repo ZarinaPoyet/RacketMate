@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useFilters } from '../context/FiltersContext';
 import { getClubs } from '../services/clubs';
 
 const TennisClub = () => {
-    const [club, setClub] = useState('');
     const [clubs, setClubs] = useState([]);
     const navigate = useNavigate();
+    const { filters, setFilters } = useFilters();
 
     useEffect(() => {
         const fetchClubs = async () => {
@@ -17,7 +18,10 @@ const TennisClub = () => {
     }, []);
 
     const handleNext = () => {
-        // TODO: Logic to handle club selection
+        if (!filters.club) {
+            console.error('Please select a club before proceeding');
+            return;
+        }
         navigate('/dashboard/choose-partner');
     };
 
@@ -26,8 +30,11 @@ const TennisClub = () => {
             <Link to="/dashboard/skill-level">⬅️</Link>
             <p>step 3 of 3</p>
             <h2>Tennis Club</h2>
-            <select value={club} onChange={(e) => setClub(e.target.value)}>
-                <option value="">Select a club</option>
+            <select
+                value={filters.club || ''}
+                onChange={(e) => setFilters(prev => ({ ...prev, club: e.target.value }))}
+            >
+                <option value='' disabled>Select a club</option>
                 {clubs.map((clubItem) => (
                     <option key={clubItem._id} value={clubItem.name}>
                         {clubItem.name}
@@ -40,4 +47,3 @@ const TennisClub = () => {
 };
 
 export default TennisClub;
-

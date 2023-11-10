@@ -1,15 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useFilters } from '../context/FiltersContext';
 
 const SkillLevel = () => {
+    const { setFilters } = useFilters();
+    const navigate = useNavigate();
+
+    const selectSkillLevel = (skillLevel) => {
+        setFilters(filters => ({ ...filters, skill_level: skillLevel }));
+        navigate('/dashboard/tennis-club');
+    }
+
     return (
         <div>
             <Link to="/dashboard/partner-type">⬅️</Link>
             <p>step 2 of 3</p>
             <h2>Skill Level</h2>
-            <Link to="/dashboard/tennis-club"><button>Beginner</button></Link>
-            <Link to="/dashboard/tennis-club"><button>Intermediate</button></Link>
-            <Link to="/dashboard/tennis-club"><button>Professional</button></Link>
+            <button onClick={() => selectSkillLevel('Beginner')}>Beginner</button>
+            <button onClick={() => selectSkillLevel('Intermediate')}>Intermediate</button>
+            <button onClick={() => selectSkillLevel('Professional')}>Professional</button>
         </div>
     )
 }
