@@ -5,6 +5,7 @@ const SkillLevel = () => {
     return (
         <div>
             <Link to="/dashboard/partner-type">⬅️</Link>
+            <p>step 2 of 3</p>
             <h2>Skill Level</h2>
             <Link to="/dashboard/tennis-club"><button>Beginner</button></Link>
             <Link to="/dashboard/tennis-club"><button>Intermediate</button></Link>

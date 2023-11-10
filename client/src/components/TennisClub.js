@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { getClubs } from '../services/clubs'; // Adjust the import path if necessary
+import { getClubs } from '../services/clubs';
 
 const TennisClub = () => {
     const [club, setClub] = useState('');
-    const [clubs, setClubs] = useState([]); // State to store the list of clubs
+    const [clubs, setClubs] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,6 +24,7 @@ const TennisClub = () => {
     return (
         <div>
             <Link to="/dashboard/skill-level">⬅️</Link>
+            <p>step 3 of 3</p>
             <h2>Tennis Club</h2>
             <select value={club} onChange={(e) => setClub(e.target.value)}>
                 <option value="">Select a club</option>
