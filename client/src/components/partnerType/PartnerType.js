@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useFilters } from '../context/FiltersContext';
+import { useFilters } from '../../context/FiltersContext';
 
 const PartnerType = () => {
     const { setFilters } = useFilters();

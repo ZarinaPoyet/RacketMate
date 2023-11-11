@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getProfile } from '../services/profiles';
+import { getProfile } from '../../services/profiles';
 
 const PartnerDetails = () => {
     const { id } = useParams();

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useFilters } from '../context/FiltersContext';
-import { getProfiles } from '../services/profiles';
+import { useFilters } from '../../context/FiltersContext';
+import { getProfiles } from '../../services/profiles';
 
 const ChoosePartner = () => {
     const [partners, setPartners] = useState([]);

@@ -1,0 +1,78 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    text-align: center;
+    /* Center text for all children */
+    background-color: var(--beige);
+}
+
+.logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 80px;
+    height: auto;
+}
+
+.app-name {
+    position: absolute;
+    top: 1.8rem;
+    left: calc(1rem + 80px + 10px);
+    font-size: 2rem;
+    color: var(--green-pale);
+}
+
+.header-text {
+    margin-bottom: 1rem;
+    /* Adjusted for overall spacing */
+}
+
+.highlight {
+    font-size: 3rem;
+    color: var(--orange-strong)
+}
+
+.main-text {
+    font-size: 3.5rem;
+    color: var(--green-pale);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Center buttons horizontally */
+    gap: 1rem;
+    /* Space between buttons */
+}
+
+button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    border-style: solid;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 100px;
+    /* Ensure buttons have the same width */
+}
+
+.login-button {
+    background-color: var(--beige);
+    border-color: var(--orange-strong);
+    color: var(--orange-strong);
+}
+
+.signup-button {
+    background-color: var(--orange-strong);
+    border: none;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+    /* A subtle effect for hover on both buttons */
+}

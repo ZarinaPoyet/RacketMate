@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useFilters } from '../context/FiltersContext';
-import { getClubs } from '../services/clubs';
+import { useFilters } from '../../context/FiltersContext';
+import { getClubs } from '../../services/clubs';
 
 const TennisClub = () => {
     const [clubs, setClubs] = useState([]);

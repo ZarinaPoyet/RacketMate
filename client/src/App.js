@@ -1,15 +1,15 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { FiltersProvider } from './context/FiltersContext';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
-import Profile from './components/Profile';
-import EditProfile from './components/EditProfile';
-import PartnerType from './components/PartnerType';
-import SkillLevel from './components/SkillLevel';
-import TennisClub from './components/TennisClub';
-import ChoosePartner from './components/ChoosePartner';
-import PartnerDetails from './components/PartnerDetails';
+import Login from './components/login/Login';
+import Dashboard from './components/dashboard/Dashboard';
+import Profile from './components/profile/Profile';
+import EditProfile from './components/editProfile/EditProfile';
+import PartnerType from './components/partnerType/PartnerType';
+import SkillLevel from './components/skillLevel/SkillLevel';
+import TennisClub from './components/tennisClub/TennisClub';
+import ChoosePartner from './components/choosePartner/ChoosePartner';
+import PartnerDetails from './components/partnerDetails/PartnerDetails';
 
 
 function App() {
