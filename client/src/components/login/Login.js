@@ -21,7 +21,7 @@ const Login = () => {
             <img src={logo} alt="Logo" className='logo' />
             <h3 className="app-name">RacketMate</h3>
             <div className="header-text">
-                <span className="highlight">Find your best</span>
+                <span className="highlight">Find your perfect</span>
                 <br />
                 <span className="main-text">RacketMate</span>
             </div>

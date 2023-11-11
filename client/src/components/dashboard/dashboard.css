@@ -1,4 +1,4 @@
-.login-container {
+.dashboard-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,43 +41,44 @@
     color: var(--green-pale);
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    /* Center buttons horizontally */
-    gap: 1rem;
-    /* Space between buttons */
-}
-
 button {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0.5rem 1rem;
-    border-radius: 0.8rem;
-    border-style: solid;
     cursor: pointer;
     transition: background-color 0.3s;
-    min-width: 100px;
+    min-width: 70px;
     /* Ensure buttons have the same width */
 }
 
-.login-button {
-    background-color: var(--beige);
-    border-color: var(--orange-strong);
-    color: var(--orange-strong);
+.next-button {
+    background-color: var(--orange-strong);
+    border-radius: 0.8rem;
+    border: none;
+    color: white;
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
 }
 
-.signup-button {
+.next-button:hover {
+    opacity: 0.8;
+}
+
+.profile-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--orange-strong);
     border: none;
     color: white;
 }
 
-.login-button:hover {
-    background-color: var(--orange-strong);
-    border: none;
-    color: white;
-}
-
-.signup-button:hover {
+.profile-button:hover {
     opacity: 0.8;
 }
