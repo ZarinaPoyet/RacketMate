@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useFilters } from '../../context/FiltersContext';
 import { getClubs } from '../../services/clubs';
+import './tennisClub.css'
+import logo from '../../assets/Logo_orange.svg'
 
 const TennisClub = () => {
     const [clubs, setClubs] = useState([]);
@@ -26,7 +28,9 @@ const TennisClub = () => {
     };
 
     return (
-        <div>
+        <div className='tennisClub-container'>
+            <img src={logo} alt="Logo" className='logo' />
+            <h3 className="app-name">RacketMate</h3>
             <Link to="/dashboard/skill-level">⬅️</Link>
             <p>step 3 of 3</p>
             <h2>Tennis Club</h2>

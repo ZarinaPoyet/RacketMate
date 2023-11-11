@@ -17,3 +17,45 @@
   --green-strong: #00462B;
   --green-pale: #129a7b;
 }
+
+
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 80px;
+  height: auto;
+}
+
+.app-name {
+  position: absolute;
+  top: 1.8rem;
+  left: calc(1rem + 80px + 10px);
+  font-size: 2rem;
+  color: var(--green-pale);
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 100px;
+  height: 50px;
+  background-color: var(--orange-strong);
+  border: none;
+  color: white;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  /* Center buttons horizontally */
+  gap: 1rem;
+  /* Space between buttons */
+}
+
+button:hover {
+  opacity: 0.8;
+}
