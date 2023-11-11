@@ -72,7 +72,13 @@ button {
     color: white;
 }
 
-button:hover {
+.login-button:hover {
+    background-color: var(--orange-strong);
+    border: none;
+    color: white;
+}
+
+.signup-button:hover {
     opacity: 0.8;
     /* A subtle effect for hover on both buttons */
 }
