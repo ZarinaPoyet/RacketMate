@@ -51,7 +51,7 @@ const TennisClub = () => {
                         ))}
                     </select>
                 </div>
-                <button onClick={handleNext}>Next</button>
+                <button className='tennisClub-button' onClick={handleNext}>Next</button>
             </div>
         </div>
     );

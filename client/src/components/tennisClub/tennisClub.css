@@ -13,7 +13,7 @@
 .selection-action-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    /* gap: 1rem; */
 }
 
 select {
@@ -64,6 +64,6 @@ select::-ms-expand {
     /* Center it exactly */
 }
 
-button {
+.tennisClub-button {
     margin-left: 1rem;
 }
