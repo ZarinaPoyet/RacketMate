@@ -34,11 +34,11 @@ const ChoosePartner = () => {
             <h2 className='choose'><span>Choose your</span> <span>RacketMate</span></h2>
             {partners.map((partner) => (
                 <div key={partner._id} className="partner-card" onClick={() => handlePartnerClick(partner._id)}>
-                    <div>
+                    <div className='name-skill-container'>
                         <h3>{`${partner.name} ${partner.surname}`}</h3>
                         <p>{partner.skill_level}</p>
-                        <p>{partner.club}</p>
                     </div>
+                    <p className='club-info'>{partner.club}</p>
                     <IoPersonCircle className="view-profile-icon" />
                 </div>
             ))}

@@ -5,12 +5,16 @@
     justify-content: center;
     min-height: 100vh;
     position: relative;
-    text-align: center;
+    text-align: unset;
     /* Center text for all children */
     background-color: var(--beige);
 }
 
 .choose {
+    /* align-self: stretch;
+    text-align: left;
+    margin-left: 10%; */
+
     margin-top: 6.5rem;
 }
 
@@ -27,6 +31,7 @@
     box-sizing: border-box;
     /* Ensures padding is included in width */
 }
+
 
 .partner-card h3 {
     margin: 0;
