@@ -21,9 +21,10 @@ const Login = () => {
             <img src={logo} alt="Logo" className='logo' />
             <h3 className="app-name">RacketMate</h3>
             <div className="header-text">
-                <span className="highlight">Find your perfect</span>
+                {/* <span className="highlight">Find your perfect</span>
                 <br />
-                <span className="main-text">RacketMate</span>
+                <span className="main-text">RacketMate</span> */}
+                <h2><span>Find your perfect</span> <br /><span>RacketMate</span></h2>
             </div>
             <div className="button-container">
                 <button className="login-button" onClick={handleLogin}>Log in</button>

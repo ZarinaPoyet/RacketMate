@@ -15,7 +15,11 @@
     /* Adjusted for overall spacing */
 }
 
-.highlight {
+.header-text h2 {
+    margin: 0;
+}
+
+/* .highlight {
     font-size: 3rem;
     color: var(--orange-strong);
 }
@@ -23,7 +27,7 @@
 .main-text {
     font-size: 3.5rem;
     color: var(--green-pale);
-}
+} */
 
 .login-button {
     background-color: var(--beige);
