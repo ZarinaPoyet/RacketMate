@@ -9,3 +9,29 @@
     /* Center text for all children */
     background-color: var(--beige);
 }
+
+h2 {
+    font-size: 3.5rem;
+    color: var(--green-pale);
+    margin-bottom: 2rem;
+}
+
+.navigation-container {
+    position: absolute;
+    top: 7rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-arrow {
+    position: absolute;
+    left: 2.5rem;
+    color: #000;
+    font-size: 24px;
+}
+
+.step-info {
+    font-size: 1rem;
+}

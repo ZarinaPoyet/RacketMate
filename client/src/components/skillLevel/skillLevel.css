@@ -9,3 +9,15 @@
     /* Center text for all children */
     background-color: var(--beige);
 }
+
+.beginner-button {
+    width: 137px;
+}
+
+.inter-button {
+    width: 137px;
+}
+
+.pro-button {
+    width: 137px;
+}

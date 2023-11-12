@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFilters } from '../../context/FiltersContext';
-import './partnerType.css'
-import logo from '../../assets/Logo_orange.svg'
+import { MdArrowBack } from 'react-icons/md';
+import './partnerType.css';
+import logo from '../../assets/Logo_orange.svg';
 
 const PartnerType = () => {
     const { setFilters } = useFilters();
@@ -17,8 +18,10 @@ const PartnerType = () => {
         <div className='partnerType-container'>
             <img src={logo} alt="Logo" className='logo' />
             <h3 className="app-name">RacketMate</h3>
-            <Link to="/dashboard">⬅️</Link>
-            <p>step 1 of 3</p>
+            <div className="navigation-container">
+                <Link to="/dashboard" className="back-arrow"><MdArrowBack /></Link>
+                <p className="step-info">step 1 of 3</p>
+            </div>
             <h2>Player Type</h2>
             <div className='button-container'>
                 <button onClick={() => selectGender('male')}>Male</button>
