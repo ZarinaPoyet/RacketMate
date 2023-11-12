@@ -15,7 +15,7 @@
     /* Adjusted for overall spacing */
 }
 
-.highlight {
+/* .highlight {
     font-size: 3rem;
     color: var(--orange-strong)
 }
@@ -23,7 +23,7 @@
 .main-text {
     font-size: 3.5rem;
     color: var(--green-pale);
-}
+} */
 
 .next-button {
     background-color: var(--orange-strong);
@@ -50,4 +50,8 @@
     color: white;
     padding: 0;
     min-width: unset;
+}
+
+.profile-button h3 {
+    font-size: x-large;
 }

@@ -8,11 +8,12 @@ const Dashboard = () => {
         <div className='dashboard-container'>
             <img src={logo} alt="Logo" className='logo' />
             <h3 className="app-name">RacketMate</h3>
-            <Link to="/profile"><button className='profile-button'>B</button></Link>
+            <Link to="/profile"><button className='profile-button'><h3>B</h3></button></Link>
             <div className="header-text">
-                <span className="highlight">Hey Bat! Match with your perfect</span>
+                {/* <span className="highlight">Hey Bat! Match with your perfect</span>
                 <br />
-                <span className="main-text">RacketMate</span>
+                <span className="main-text">RacketMate</span> */}
+                <h2><span>Hey Bat! Match with your perfect</span> <br /><span>RacketMate</span></h2>
             </div>
             <Link to="/dashboard/partner-type"><button className='next-button'>Next</button></Link>
         </div>
