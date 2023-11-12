@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getProfile } from '../../services/profiles';
+import { MdArrowBack } from 'react-icons/md';
+import './partnerDetails.css'
+import logo from '../../assets/Logo_orange.svg'
 
 const PartnerDetails = () => {
     const { id } = useParams();
@@ -16,13 +19,22 @@ const PartnerDetails = () => {
     }, [id]);
 
     return (
-        <div>
-            <Link to="/dashboard/choose-partner">⬅️</Link>
-            <h1>Partner Details</h1>
-            <h2>{partner.name} {partner.surname}</h2>
-            <p>{partner.gender}</p>
-            <p>{partner.skill_level}</p>
-            <p>{partner.club}</p>
+        <div className='partnerDetails-container'>
+            <img src={logo} alt="Logo" className='logo' />
+            <h3 className="app-name">RacketMate</h3>
+            <Link to="/dashboard/choose-partner" className="back-arrow-detail"><MdArrowBack /></Link>
+            <div className='card'>
+                <div className='initial-container'>
+                    <div className='initial'>{partner.name?.[0]}</div>
+                    <button className='msg-button'>Message</button>
+                </div>
+                <div className='details'>
+                    <h2>{partner.name} {partner.surname}</h2>
+                    <p><span>Gender:</span> <span>{partner.gender}</span></p>
+                    <p><span>Skill Level:</span> <span>{partner.skill_level}</span></p>
+                    <p><span>Club:</span> <span>{partner.club}</span></p>
+                </div>
+            </div>
         </div>
     );
 };
