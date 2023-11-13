@@ -11,5 +11,7 @@ router.get('/profiles/:id', controller.getProfile);
 router.get('/clubs', controller.getClubs);
 router.post('/clubs', controller.postClub);
 
+router.post('/auth', controller.authUser);
+
 
 module.exports = router;
