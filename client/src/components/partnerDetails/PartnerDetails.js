@@ -29,10 +29,12 @@ const PartnerDetails = () => {
                     <button className='msg-button'>Message</button>
                 </div>
                 <div className='details'>
-                    <h2>{partner.name} {partner.surname}</h2>
-                    <p><span>Gender:</span> <span>{partner.gender}</span></p>
-                    <p><span>Skill Level:</span> <span>{partner.skill_level}</span></p>
-                    <p><span>Club:</span> <span>{partner.club}</span></p>
+                    <div className='name-surname-detail'>{partner.name} {partner.surname}</div>
+                    <div className='gender-skill-club'>
+                        <p><span>Gender: </span> <span>{partner.gender}</span></p>
+                        <p><span>Level: </span> <span>{partner.skill_level}</span></p>
+                        <p><span>Club: </span> <span>{partner.club}</span></p>
+                    </div>
                 </div>
             </div>
         </div>
