@@ -14,9 +14,28 @@ const profileSchema = new mongoose.Schema({
 
 const clubSchema = new mongoose.Schema({
     name: String
+});
+
+const userSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    }
+}, {
+    timestamps: true
 })
 
 const Profile = mongoose.model('Profile', profileSchema);
-const Club = mongoose.model('Club', clubSchema)
+const Club = mongoose.model('Club', clubSchema);
+const User = mongoose.model('User', userSchema)
 
-module.exports = { Profile, Club }
+module.exports = { Profile, Club, User }

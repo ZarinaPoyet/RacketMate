@@ -1,4 +1,4 @@
-const { Profile, Club } = require('./model');
+const { Profile, Club, User } = require('./model');
 const asyncHandler = require('express-async-handler');
 
 async function getProfiles(req, res) {
@@ -82,6 +82,10 @@ const authUser = asyncHandler(async (req, res) => {
 // @access   Public 
 
 const registerUser = asyncHandler(async (req, res) => {
+    console.log(req.body);
+
+
+
     res.status(200).json({ message: 'Register User' })
 });
 
@@ -116,6 +120,17 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
 
 
-module.exports = { getProfiles, postProfile, getProfile, getClubs, postClub, authUser, registerUser, logoutUser, getUserProfile, updateUserProfile }
+module.exports = {
+    getProfiles,
+    postProfile,
+    getProfile,
+    getClubs,
+    postClub,
+    authUser,
+    registerUser,
+    logoutUser,
+    getUserProfile,
+    updateUserProfile
+}
 
 
