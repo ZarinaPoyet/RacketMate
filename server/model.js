@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 mongoose.connect('mongodb://127.0.0.1:27017/profiles')
     .then(() => console.log('Connected to MongoDB'))
@@ -33,6 +34,15 @@ const userSchema = new mongoose.Schema({
 }, {
     timestamps: true
 })
+
+userSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) {
+        next();
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt)
+});
 
 const Profile = mongoose.model('Profile', profileSchema);
 const Club = mongoose.model('Club', clubSchema);
