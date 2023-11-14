@@ -12,11 +12,11 @@ const Profile = () => {
             <Link to="/dashboard" className="back-arrow-detail"><MdArrowBack /></Link>
             <div className="card">
                 <div className="initial-container">
-                    <div className='initial'>B</div>
+                    <div className='initial'>F</div>
                     <Link to="/profile/edit"><button className='msg-button'>Edit</button></Link>
                 </div>
                 <div className="details">
-                    <div className='name-surname-detail'>Bat Poyet</div>
+                    <div className='name-surname-detail'>Philippe Martin</div>
                     <div className="gender-skill-club">
                         <p><span>Gender: </span> <span>Male</span></p>
                         <p><span>Level: </span> <span>Professional</span></p>
