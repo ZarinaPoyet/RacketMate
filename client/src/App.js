@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { FiltersProvider } from './context/FiltersContext';
+import { AuthProvider } from './context/AuthContext';
 import Login from './components/login/Login';
 import Dashboard from './components/dashboard/Dashboard';
 import Profile from './components/profile/Profile';
@@ -14,21 +15,23 @@ import PartnerDetails from './components/partnerDetails/PartnerDetails';
 
 function App() {
   return (
-    <FiltersProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/profile/edit" element={<EditProfile />} />
-          <Route path="/dashboard/partner-type" element={<PartnerType />} />
-          <Route path="/dashboard/skill-level" element={<SkillLevel />} />
-          <Route path="/dashboard/tennis-club" element={<TennisClub />} />
-          <Route path="/dashboard/choose-partner" element={<ChoosePartner />} />
-          <Route path="/choose-partner/partner-details/:id" element={<PartnerDetails />} />
-        </Routes>
-      </Router>
-    </FiltersProvider>
+    <AuthProvider>
+      <FiltersProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/edit" element={<EditProfile />} />
+            <Route path="/dashboard/partner-type" element={<PartnerType />} />
+            <Route path="/dashboard/skill-level" element={<SkillLevel />} />
+            <Route path="/dashboard/tennis-club" element={<TennisClub />} />
+            <Route path="/dashboard/choose-partner" element={<ChoosePartner />} />
+            <Route path="/choose-partner/partner-details/:id" element={<PartnerDetails />} />
+          </Routes>
+        </Router>
+      </FiltersProvider>
+    </AuthProvider>
   );
 }
 

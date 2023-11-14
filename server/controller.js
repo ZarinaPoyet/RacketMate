@@ -76,21 +76,25 @@ async function postClub(req, res) {
 
 const authUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
-
     const user = await User.findOne({ email });
 
     if (user && (await user.matchPassword(password))) {
-        generateToken(res, user._id);
-        res.status(201).json({
+        const token = generateToken(user._id); // Генерация токена
+        res.cookie('jwt', token, { // Установка куки с токеном
+            httpOnly: true,
+            sameSite: 'Strict',
+            maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+        });
+        res.status(201).json({ // Отправка токена в ответе
             _id: user._id,
             name: user.name,
-            email: user.email
+            email: user.email,
+            token: token
         });
     } else {
         res.status(401);
         throw new Error('Invalid email or password');
     }
-
 });
 
 // @desc     Register a new user
