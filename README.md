@@ -1,4 +1,4 @@
-# RACKETMATE
+# RacketMate
 
 RacketMate is a web app that helps tennis enthusiasts in their area connect and find suitable matches for their next tennis game.
 
