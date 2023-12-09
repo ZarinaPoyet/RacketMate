@@ -25,3 +25,20 @@ cd server
 npm install
 npm start
 ```
+
+## Teck Stack
+
+**Front end:**
+
+- React.js
+- CSS
+
+**Back end:**
+
+- Express
+- MongoDB
+- Mongoose
+
+## Author
+
+- Zarina Poyet - [LinkedIn](https://www.linkedin.com/in/zarinapoyet/)
