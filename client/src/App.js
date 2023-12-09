@@ -1,7 +1,4 @@
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { FiltersProvider } from './context/FiltersContext';
-import { AuthProvider } from './context/AuthContext';
 import Login from './components/login/Login';
 import Dashboard from './components/dashboard/Dashboard';
 import Profile from './components/profile/Profile';
@@ -11,7 +8,9 @@ import SkillLevel from './components/skillLevel/SkillLevel';
 import TennisClub from './components/tennisClub/TennisClub';
 import ChoosePartner from './components/choosePartner/ChoosePartner';
 import PartnerDetails from './components/partnerDetails/PartnerDetails';
-
+import { FiltersProvider } from './context/FiltersContext';
+import { AuthProvider } from './context/AuthContext';
+import './App.css';
 
 function App() {
   return (
@@ -26,8 +25,14 @@ function App() {
             <Route path="/dashboard/partner-type" element={<PartnerType />} />
             <Route path="/dashboard/skill-level" element={<SkillLevel />} />
             <Route path="/dashboard/tennis-club" element={<TennisClub />} />
-            <Route path="/dashboard/choose-partner" element={<ChoosePartner />} />
-            <Route path="/choose-partner/partner-details/:id" element={<PartnerDetails />} />
+            <Route
+              path="/dashboard/choose-partner"
+              element={<ChoosePartner />}
+            />
+            <Route
+              path="/choose-partner/partner-details/:id"
+              element={<PartnerDetails />}
+            />
           </Routes>
         </Router>
       </FiltersProvider>

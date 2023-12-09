@@ -11,13 +11,12 @@
 /* COLORS */
 
 :root {
-  --orange-strong: #F16C19;
+  --orange-strong: #f16c19;
   --orange-pale: #ef9f5a;
   --beige: #ffe3c4;
-  --green-strong: #00462B;
+  --green-strong: #00462b;
   --green-pale: #129a7b;
 }
-
 
 .logo {
   position: absolute;
@@ -51,9 +50,7 @@ button {
 .button-container {
   display: flex;
   justify-content: center;
-  /* Center buttons horizontally */
   gap: 1rem;
-  /* Space between buttons */
 }
 
 button:hover {

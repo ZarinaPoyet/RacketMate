@@ -1,57 +1,45 @@
 .dashboard-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    position: relative;
-    text-align: center;
-    /* Center text for all children */
-    background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  background-color: var(--beige);
 }
 
 .header-text {
-    margin-bottom: 1rem;
-    /* Adjusted for overall spacing */
+  margin-bottom: 1rem;
 }
-
-/* .highlight {
-    font-size: 3rem;
-    color: var(--orange-strong)
-}
-
-.main-text {
-    font-size: 3.5rem;
-    color: var(--green-pale);
-} */
 
 .next-button {
-    background-color: var(--orange-strong);
-    border-radius: 0.8rem;
-    border: none;
-    color: white;
-    width: 100px;
-    height: 50px;
-    margin-top: 10px;
+  background-color: var(--orange-strong);
+  border-radius: 0.8rem;
+  border: none;
+  color: white;
+  width: 100px;
+  height: 50px;
+  margin-top: 10px;
 }
 
 .profile-button {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--orange-strong);
-    border: none;
-    color: white;
-    padding: 0;
-    min-width: unset;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange-strong);
+  border: none;
+  color: white;
+  padding: 0;
+  min-width: unset;
 }
 
 .profile-button h3 {
-    font-size: x-large;
+  font-size: x-large;
 }

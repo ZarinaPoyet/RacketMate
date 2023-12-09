@@ -1,38 +1,37 @@
 .partnerType-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    position: relative;
-    text-align: center;
-    /* Center text for all children */
-    background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  background-color: var(--beige);
 }
 
 h2 {
-    font-size: 3.5rem;
-    color: var(--green-pale);
-    margin-bottom: 2rem;
+  font-size: 3.5rem;
+  color: var(--green-pale);
+  margin-bottom: 2rem;
 }
 
 .navigation-container {
-    position: absolute;
-    top: 7rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .back-arrow {
-    position: absolute;
-    left: 2.5rem;
-    color: #000;
-    font-size: 24px;
+  position: absolute;
+  left: 2.5rem;
+  color: #000;
+  font-size: 24px;
 }
 
 .step-info {
-    font-size: 1rem;
-    font-weight: normal;
+  font-size: 1rem;
+  font-weight: normal;
 }

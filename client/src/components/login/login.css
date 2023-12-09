@@ -1,54 +1,42 @@
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    position: relative;
-    text-align: center;
-    /* Center text for all children */
-    background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  background-color: var(--beige);
 }
 
 .header-text {
-    margin-bottom: 1rem;
-    /* Adjusted for overall spacing */
+  margin-bottom: 1rem;
 }
 
 .header-text h2 {
-    margin: 0;
+  margin: 0;
 }
-
-/* .highlight {
-    font-size: 3rem;
-    color: var(--orange-strong);
-}
-
-.main-text {
-    font-size: 3.5rem;
-    color: var(--green-pale);
-} */
 
 .login-button {
-    background-color: var(--beige);
-    border-color: var(--orange-strong);
-    color: var(--orange-strong);
-    border-style: solid;
+  background-color: var(--beige);
+  border-color: var(--orange-strong);
+  color: var(--orange-strong);
+  border-style: solid;
 }
 
 .signup-button {
-    background-color: var(--orange-strong);
-    border: none;
-    color: white;
+  background-color: var(--orange-strong);
+  border: none;
+  color: white;
 }
 
 .login-button:hover {
-    background-color: var(--orange-strong);
-    border: none;
-    color: white;
-    opacity: unset;
+  background-color: var(--orange-strong);
+  border: none;
+  color: white;
+  opacity: unset;
 }
 
 .signup-button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }

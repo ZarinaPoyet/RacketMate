@@ -1,69 +1,55 @@
 .tennisClub-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    position: relative;
-    text-align: center;
-    /* Center text for all children */
-    background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  background-color: var(--beige);
 }
 
 .selection-action-container {
-    display: flex;
-    align-items: center;
-    /* gap: 1rem; */
+  display: flex;
+  align-items: center;
 }
 
 select {
-    padding: 0.5rem 1rem;
-    border-radius: 0.8rem;
-    border: 2px solid var(--orange-strong);
-    height: 50px;
-    background-color: white;
-    color: var(--green-pale);
-    font-size: 1rem;
-    cursor: pointer;
-    /* Indicate it is selectable */
-    outline: none;
-    /* Remove the default focus outline */
-    -webkit-appearance: none;
-    /* Remove default styling in webkit browsers */
-    -moz-appearance: none;
-    /* Remove default styling in Firefox */
-    appearance: none;
-    /* Future-proofing for standardized property */
-    position: relative;
-    /* For positioning the custom arrow icon if needed */
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+  border: 2px solid var(--orange-strong);
+  height: 50px;
+  background-color: white;
+  color: var(--green-pale);
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
 }
 
-/* Style the dropdown arrow */
 select::-ms-expand {
-    display: none;
-    /* Remove default arrow in IE */
+  display: none;
 }
 
-/* Add a custom arrow */
 .select-container {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .select-container:after {
-    content: '▼';
-    font-size: 0.8rem;
-    color: var(--orange-strong);
-    right: 1rem;
-    top: 50%;
-    position: absolute;
-    /* Take it out of document flow */
-    pointer-events: none;
-    /* Let clicks through to the select element */
-    transform: translateY(-50%);
-    /* Center it exactly */
+  content: '▼';
+  font-size: 0.8rem;
+  color: var(--orange-strong);
+  right: 1rem;
+  top: 50%;
+  position: absolute;
+  pointer-events: none;
+  transform: translateY(-50%);
 }
 
 .tennisClub-button {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }

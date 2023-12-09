@@ -3,147 +3,142 @@ const asyncHandler = require('express-async-handler');
 const { generateToken } = require('./utils/generateToken');
 
 async function getProfiles(req, res) {
-    try {
-        console.log(req.query, req.params)
-        const query = {};
-        if (req.query.gender) {
-            query.gender = req.query.gender.toLowerCase();
-        }
-        if (req.query.skill_level) {
-            query.skill_level = req.query.skill_level.toLowerCase();
-        }
-        if (req.query.club) {
-            query.club = req.query.club;
-        }
-
-        console.log('server query:', query);
-        const profiles = await Profile.find(query);
-        res.json(profiles);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ error: 'Internal server error' });
+  try {
+    console.log(req.query, req.params);
+    const query = {};
+    if (req.query.gender) {
+      query.gender = req.query.gender.toLowerCase();
     }
+    if (req.query.skill_level) {
+      query.skill_level = req.query.skill_level.toLowerCase();
+    }
+    if (req.query.club) {
+      query.club = req.query.club;
+    }
+
+    console.log('server query:', query);
+    const profiles = await Profile.find(query);
+    res.json(profiles);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 }
 
 async function postProfile(req, res) {
-    try {
-        const newProfile = await Profile.create(req.body)
-        res.status(201).json(newProfile);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
+  try {
+    const newProfile = await Profile.create(req.body);
+    res.status(201).json(newProfile);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 }
 
 async function getProfile(req, res) {
-    try {
-        // console.log('ID ==> ', req.params)
-        const profile = await Profile.findById(req.params.id);
-        if (!profile) {
-            return res.status(404).json({ error: 'Profile not found' });
-        }
-        res.json(profile);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ error: 'Internal server error' });
+  try {
+    // console.log('ID ==> ', req.params)
+    const profile = await Profile.findById(req.params.id);
+    if (!profile) {
+      return res.status(404).json({ error: 'Profile not found' });
     }
+    res.json(profile);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 }
 
 async function getClubs(req, res) {
-    try {
-        const profiles = await Club.find();
-        res.json(profiles);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
+  try {
+    const profiles = await Club.find();
+    res.json(profiles);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 }
 
 async function postClub(req, res) {
-    try {
-        const newProfile = await Club.create(req.body)
-        res.status(201).json(newProfile);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
+  try {
+    const newProfile = await Club.create(req.body);
+    res.status(201).json(newProfile);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 }
-
 
 // @desc     Auth user/set token
 // route     POST /api/users/auth
 // @access   Public -> you don't need to be logged in to acces to this route
 
 const authUser = asyncHandler(async (req, res) => {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
+  const { email, password } = req.body;
+  const user = await User.findOne({ email });
 
-    if (user && (await user.matchPassword(password))) {
-        const token = generateToken(user._id); // Генерация токена
-        res.cookie('jwt', token, { // Установка куки с токеном
-            httpOnly: true,
-            sameSite: 'Strict',
-            maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-        });
-        res.status(201).json({ // Отправка токена в ответе
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            token: token
-        });
-    } else {
-        res.status(401);
-        throw new Error('Invalid email or password');
-    }
+  if (user && (await user.matchPassword(password))) {
+    const token = generateToken(user._id);
+    res.cookie('jwt', token, {
+      httpOnly: true,
+      sameSite: 'Strict',
+      maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    });
+    res.status(201).json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      token: token,
+    });
+  } else {
+    res.status(401);
+    throw new Error('Invalid email or password');
+  }
 });
 
 // @desc     Register a new user
 // route     POST /api/users
-// @access   Public 
+// @access   Public
 
 const registerUser = asyncHandler(async (req, res) => {
-    const { name, email, password } = req.body;
-    // console.log(name);
+  const { name, email, password } = req.body;
+  const userExists = await User.findOne({ email });
 
-    const userExists = await User.findOne({ email })
+  if (userExists) {
+    res.status(400);
+    throw new Error('User already exists');
+  }
 
-    if (userExists) {
-        res.status(400);
-        throw new Error('User already exists');
-    }
+  const user = await User.create({
+    name,
+    email,
+    password,
+  });
 
-    const user = await User.create({
-        name,
-        email,
-        password
+  if (user) {
+    generateToken(res, user._id);
+    res.status(201).json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
     });
-
-    if (user) {
-        generateToken(res, user._id);
-        res.status(201).json({
-            _id: user._id,
-            name: user.name,
-            email: user.email
-        });
-    } else {
-        res.status(400);
-        throw new Error('Invalid user data');
-    }
+  } else {
+    res.status(400);
+    throw new Error('Invalid user data');
+  }
 });
 
 // @desc     Logout user
 // route     POST /api/users/logout
-// @access   Public 
+// @access   Public
 
 const logoutUser = asyncHandler(async (req, res) => {
-    res.cookie('jwt', '', {
-        httpOnly: true,
-        expires: new Date(0)
-    })
+  res.cookie('jwt', '', {
+    httpOnly: true,
+    expires: new Date(0),
+  });
 
-
-
-    res.status(200).json({ message: 'User logged out' })
+  res.status(200).json({ message: 'User logged out' });
 });
 
 // @desc     Get user profile
@@ -151,7 +146,7 @@ const logoutUser = asyncHandler(async (req, res) => {
 // @access   Private -> you have to have a token
 
 const getUserProfile = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: 'User Profile' })
+  res.status(200).json({ message: 'User Profile' });
 });
 
 // @desc     Update user profile
@@ -159,27 +154,18 @@ const getUserProfile = asyncHandler(async (req, res) => {
 // @access   Private
 
 const updateUserProfile = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: 'Update user profile' })
+  res.status(200).json({ message: 'Update user profile' });
 });
 
-
-
-
-
-
-
-
 module.exports = {
-    getProfiles,
-    postProfile,
-    getProfile,
-    getClubs,
-    postClub,
-    authUser,
-    registerUser,
-    logoutUser,
-    getUserProfile,
-    updateUserProfile
-}
-
-
+  getProfiles,
+  postProfile,
+  getProfile,
+  getClubs,
+  postClub,
+  authUser,
+  registerUser,
+  logoutUser,
+  getUserProfile,
+  updateUserProfile,
+};
