@@ -4,11 +4,13 @@ RacketMate is a web app that helps tennis enthusiasts in their area connect and 
 
 ## Getting started
 
+**1. Configure environment variables**
+
 - Create a `.env` file in server folder
 - Refer to the `.env.example` file in server folder
 - Add your configs
 
-**2. Instal dependencies and run client**
+**2. Install dependencies and run client**
 
 ```
 cd client
