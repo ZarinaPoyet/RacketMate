@@ -1,7 +1,12 @@
 import React from 'react';
+import TennisClub from '../components/tennisClub/TennisClub';
 
 const TennisClubPage = () => {
-  return <div></div>;
+  return (
+    <div>
+      <TennisClub />
+    </div>
+  );
 };
 
 export default TennisClubPage;

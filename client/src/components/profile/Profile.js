@@ -15,7 +15,7 @@ const Profile = () => {
       <div className="card">
         <div className="initial-container">
           <div className="initial">P</div>
-          <Link to="/profile/edit">
+          <Link to="/edit-profile">
             <button className="msg-button">Edit</button>
           </Link>
         </div>

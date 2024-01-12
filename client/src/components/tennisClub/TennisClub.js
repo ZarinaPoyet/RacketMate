@@ -25,7 +25,7 @@ const TennisClub = () => {
       console.error('Please select a club before proceeding');
       return;
     }
-    navigate('/dashboard/choose-partner');
+    navigate('/choose-partner');
   };
 
   return (
@@ -33,7 +33,7 @@ const TennisClub = () => {
       <img src={logo} alt="Logo" className="logo" />
       <h3 className="app-name">RacketMate</h3>
       <div className="navigation-container">
-        <Link to="/dashboard/skill-level" className="back-arrow">
+        <Link to="/skill-level" className="back-arrow">
           <MdArrowBack />
         </Link>
         <p className="step-info">step 3 of 3</p>

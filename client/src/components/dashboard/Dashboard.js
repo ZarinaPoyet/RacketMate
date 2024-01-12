@@ -19,7 +19,7 @@ const Dashboard = () => {
           <span>RacketMate</span>
         </h2>
       </div>
-      <Link to="/dashboard/partner-type">
+      <Link to="/partner-type">
         <button className="next-button">Next</button>
       </Link>
     </div>

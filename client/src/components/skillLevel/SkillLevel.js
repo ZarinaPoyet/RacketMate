@@ -11,7 +11,7 @@ const SkillLevel = () => {
 
   const selectSkillLevel = (skillLevel) => {
     setFilters((filters) => ({ ...filters, skill_level: skillLevel }));
-    navigate('/dashboard/tennis-club');
+    navigate('/tennis-club');
   };
 
   return (
@@ -19,7 +19,7 @@ const SkillLevel = () => {
       <img src={logo} alt="Logo" className="logo" />
       <h3 className="app-name">RacketMate</h3>
       <div className="navigation-container">
-        <Link to="/dashboard/partner-type" className="back-arrow">
+        <Link to="/partner-type" className="back-arrow">
           <MdArrowBack />
         </Link>
         <p className="step-info">step 2 of 3</p>

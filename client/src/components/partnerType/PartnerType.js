@@ -11,7 +11,7 @@ const PartnerType = () => {
 
   const selectGender = (gender) => {
     setFilters((filters) => ({ ...filters, gender: gender }));
-    navigate('/dashboard/skill-level');
+    navigate('/skill-level');
   };
 
   return (

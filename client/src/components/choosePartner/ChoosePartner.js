@@ -21,7 +21,7 @@ const ChoosePartner = () => {
   }, [filters]);
 
   const handlePartnerClick = (partnerId) => {
-    navigate(`/choose-partner/partner-details/${partnerId}`);
+    navigate(`/partner-details/${partnerId}`);
   };
 
   return (

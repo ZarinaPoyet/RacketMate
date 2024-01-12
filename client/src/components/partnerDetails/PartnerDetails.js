@@ -22,7 +22,7 @@ const PartnerDetails = () => {
     <div className="partnerDetails-container">
       <img src={logo} alt="Logo" className="logo" />
       <h3 className="app-name">RacketMate</h3>
-      <Link to="/dashboard/choose-partner" className="back-arrow-detail">
+      <Link to="/choose-partner" className="back-arrow-detail">
         <MdArrowBack />
       </Link>
       <div className="card">
