@@ -26,7 +26,7 @@ npm install
 npm start
 ```
 
-## Teck Stack
+## Tech Stack
 
 **Front end:**
 
